@@ -1,16 +1,17 @@
+import PropTypes from "prop-types";
 import projectItems from "../../materials/objects/projectsItems";
 
 export default function Cards({ searchTerm }) {
-  //   const filteredCards = projectItems.filter((item) => {
-  //     item.title
-  //       .concat(item.description)
-  //       .toLocaleLowerCase()
-  //       .includes(searchTerm);
-  //   });
+  const filteredCards = projectItems.filter((item) => {
+    return item.title
+      .concat(item.description)
+      .toLocaleLowerCase()
+      .includes(searchTerm.toLocaleLowerCase());
+  });
 
   return (
     <div className="main__cards__container">
-      {projectItems.map((arrayItem) => {
+      {filteredCards.map((arrayItem) => {
         return (
           <article key={arrayItem.title} className="main__cards__article">
             <a className="main__cards__article__item" href="#">
@@ -36,3 +37,7 @@ export default function Cards({ searchTerm }) {
     </div>
   );
 }
+
+Cards.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
+};
