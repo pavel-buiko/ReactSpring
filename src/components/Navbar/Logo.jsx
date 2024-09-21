@@ -1,4 +1,4 @@
-import logo from "../../public/assets/images/spring.png";
+import logo from "../../../public/assets/images/spring.png";
 
 export default function Logo() {
   return (

@@ -1,4 +1,4 @@
-import menuItems from "../../public/assets/dataArrays/menuItems";
+import menuItems from "../../../public/assets/dataArrays/menuItems";
 
 export default function MenuList() {
   return (

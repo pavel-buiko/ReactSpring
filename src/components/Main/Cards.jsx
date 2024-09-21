@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import projectItems from "../../public/assets/dataArrays/projectItems";
+import projectItems from "../../../public/assets/dataArrays/projectItems";
 
 export default function Cards({ searchTerm }) {
   const filteredCards = projectItems.filter((item) => {
