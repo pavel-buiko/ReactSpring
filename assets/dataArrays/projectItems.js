@@ -12,7 +12,7 @@ const projectItems = [
     title: "Spring Framework",
     description:
       "Provides core support for dependency injection, transaction management, web apps, data access, messaging, and more.",
-    imgSrc: "public/assets/images/spring-framework.svg",
+    imgSrc: "../images/spring-framework.svg",
     link: "#",
   },
   {
