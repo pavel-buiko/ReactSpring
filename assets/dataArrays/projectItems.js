@@ -3,14 +3,14 @@ const projectItems = [
     title: "Spring Boot",
     description:
       "Takes an opinionated view of building Spring applications and gets you in and running as quickly as possible.",
-    imgSrc: "public/assets/images/spring-boot.svg",
+    imgSrc: "/assets/images/spring-boot.svg",
     link: "#",
   },
   {
     title: "Spring Framework",
     description:
       "Provides core support for dependency injection, transaction management, web apps, data access, messaging, and more.",
-    imgSrc: "public/assets/images/spring-framework.svg",
+    imgSrc: "/assets/images/spring-framework.svg",
     link: "#",
   },
   {
