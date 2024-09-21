@@ -2,7 +2,7 @@ export default function Logo() {
   return (
     <div className="header__icon">
       <img
-        src="./materials/images/Безымянный.png"
+        src="public/images/Безымянный.png"
         alt="header icon"
         className="header__icon__image"
       />
