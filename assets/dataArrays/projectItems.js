@@ -1,5 +1,5 @@
 import springBoot from "../images/spring-boot.svg";
-
+import springFramework from "../images/spring-framework.svg";
 const projectItems = [
   {
     title: "Spring Boot",
@@ -12,7 +12,7 @@ const projectItems = [
     title: "Spring Framework",
     description:
       "Provides core support for dependency injection, transaction management, web apps, data access, messaging, and more.",
-    imgSrc: "../images/spring-framework.svg",
+    imgSrc: springFramework,
     link: "#",
   },
   {
