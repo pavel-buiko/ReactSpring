@@ -284,4 +284,7 @@ a:visited {
   .search-container {
     margin-bottom: 15px;
   }
+}
+.global_burger {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

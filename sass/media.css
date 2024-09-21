@@ -55,6 +55,10 @@
     padding: 0 5px;
   }
 
+  .global_burger {
+    display: block;
+  }
+
   .header__navigation {
     display: none;
     position: fixed;
