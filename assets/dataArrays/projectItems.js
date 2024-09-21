@@ -1,5 +1,10 @@
 import springBoot from "../images/spring-boot.svg";
 import springFramework from "../images/spring-framework.svg";
+import springData from "../images/spring-data.svg";
+import springCloud from "../images/spring-cloud.svg";
+import springDataFlow from "../images/spring-data-flow.svg";
+import springSecurity from "../images/spring-security.svg";
+
 const projectItems = [
   {
     title: "Spring Boot",
@@ -19,28 +24,28 @@ const projectItems = [
     title: "Spring Data",
     description:
       "Provides a consistent approach to data access - relational, non-relational, map-reduce, and beyond.",
-    imgSrc: "public/assets/images/spring-data.svg",
+    imgSrc: springData,
     link: "#",
   },
   {
     title: "Spring Cloud",
     description:
       "Provides a set of tools for common patterns in distributed systems. Useful for building and deploying microservices.",
-    imgSrc: "public/assets/images/spring-cloud.svg",
+    imgSrc: springCloud,
     link: "#",
   },
   {
     title: "Spring Cloud Data Flow",
     description:
       "Provides an orchestration service for composable data microservice applications on modern runtimes.",
-    imgSrc: "public/assets/images/spring-data-flow.svg",
+    imgSrc: springDataFlow,
     link: "#",
   },
   {
     title: "Spring Security",
     description:
       "Takes an opinionated view of building Spring applications and gets you in and running as quickly as possible.",
-    imgSrc: "public/assets/images/spring-security.svg",
+    imgSrc: springSecurity,
     link: "#",
   },
 ];
