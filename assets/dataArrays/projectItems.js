@@ -3,7 +3,7 @@ const projectItems = [
     title: "Spring Boot",
     description:
       "Takes an opinionated view of building Spring applications and gets you in and running as quickly as possible.",
-    imgSrc: "public/assets/images/spring-boot.svg",
+    imgSrc: "../../public/assets/images/spring-boot.svg",
     link: "#",
   },
   {
