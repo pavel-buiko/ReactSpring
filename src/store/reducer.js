@@ -23,6 +23,7 @@ const userState = {
 export const userReducer = (state = userState, action) => {
   switch (action.type) {
     case "LOGIN":
+      console.log("Congrats");
       return { ...state, isAuthenticated: true, user: action.value };
 
     default:
