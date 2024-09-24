@@ -1,19 +1,24 @@
 import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../../store/actions";
 import { useEffect, useState } from "react";
 
-export default function ProjectSearch({ setSearchTerm }) {
-  const handleSearch = (event) => {
-    setInputValue(event.target.value);
-  };
+export default function ProjectSearch() {
+  const dispatch = useDispatch();
+  const { searchTerm } = useSelector((state) => state.search);
 
-  const [inputValue, setInputValue] = useState("");
+  const [tempInput, setTemInput] = useState(searchTerm);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setSearchTerm(inputValue);
+    const timeId = setTimeout(() => {
+      dispatch(setSearchTerm(tempInput));
     }, 500);
-    return () => clearTimeout(timeoutId);
-  }, [inputValue, setSearchTerm]);
+    return () => clearTimeout(timeId);
+  }, [tempInput, dispatch]);
+
+  const handleSearch = (event) => {
+    setTemInput(event.target.value);
+  };
 
   return (
     <div>
@@ -22,6 +27,7 @@ export default function ProjectSearch({ setSearchTerm }) {
           type="text"
           id="search-input"
           placeholder="Search articles..."
+          value={tempInput}
           onChange={handleSearch}
         />
       </div>

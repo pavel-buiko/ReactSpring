@@ -1,7 +1,9 @@
-import PropTypes from "prop-types";
-import projectItems from "../../../public/assets/dataArrays/projectItems";
+import { useSelector } from "react-redux";
 
-export default function Cards({ searchTerm }) {
+export default function Cards() {
+  const { searchTerm } = useSelector((state) => state.search);
+  const { projectItems } = useSelector((state) => state.search);
+
   const filteredCards = projectItems.filter((item) => {
     return item.title
       .concat(item.description)
@@ -37,7 +39,3 @@ export default function Cards({ searchTerm }) {
     </div>
   );
 }
-
-Cards.propTypes = {
-  searchTerm: PropTypes.string.isRequired,
-};
