@@ -5,7 +5,7 @@ const defaultState = {
   projectItems: projectItems,
 };
 
-const reducer = (state = defaultState, action) => {
+export const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "set_search_term":
       return { ...state, searchTerm: action.value };
@@ -15,4 +15,17 @@ const reducer = (state = defaultState, action) => {
   }
 };
 
-export default reducer;
+const userState = {
+  isAuthenticated: false,
+  user: null,
+};
+
+export const userReducer = (state = userState, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      return { ...state, isAuthenticated: true, user: action.value };
+
+    default:
+      return state;
+  }
+};

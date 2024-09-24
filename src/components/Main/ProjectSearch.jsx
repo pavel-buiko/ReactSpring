@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function ProjectSearch() {
   const dispatch = useDispatch();
-  const searchTerm = useSelector((state) => state.searchTerm);
+  const { searchTerm } = useSelector((state) => state.search);
 
   const [tempInput, setTemInput] = useState(searchTerm);
 
