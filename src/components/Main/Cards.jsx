@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
-import projectItems from "../../../public/assets/dataArrays/projectItems";
+import { useSelector } from "react-redux";
 
-export default function Cards({ searchTerm }) {
+export default function Cards() {
+  const searchTerm = useSelector((state) => state.searchTerm);
+  const projectItems = useSelector((state) => state.projectItems);
+
   const filteredCards = projectItems.filter((item) => {
     return item.title
       .concat(item.description)
