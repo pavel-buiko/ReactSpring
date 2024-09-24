@@ -3,7 +3,7 @@ import logo from "../../../public/assets/images/spring.png";
 import LoginInput from "./loginInput/loginInput";
 import LoginButton from "./loginButton/LoginButton";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loginAction } from "../../store/actions";
 import { useNavigate } from "react-router-dom";
 
@@ -20,6 +20,7 @@ export default function Login() {
 
     if (username == "admin" && password == 1234) {
       dispatch(loginAction({ username, password }));
+      navigate("//");
     } else {
       alert("Invalid credentials");
     }

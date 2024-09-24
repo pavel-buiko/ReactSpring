@@ -5,7 +5,7 @@ import Login from "./components/Login/Login";
 import { useSelector } from "react-redux";
 
 function App() {
-  const { isAuthenticated } = useSelector((state) => state.user);
+  const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
   return (
     <BrowserRouter basename="/reactSpringCopy">
