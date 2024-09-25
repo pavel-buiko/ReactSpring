@@ -9,6 +9,6 @@ export default function LoginButton({ onClick, label }) {
 }
 
 LoginButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  label: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+  label: PropTypes.string.isRequired,
 };

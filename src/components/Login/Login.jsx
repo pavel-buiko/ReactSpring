@@ -1,4 +1,3 @@
-//import { useSelector } from "react-redux";
 import logo from "../../../public/assets/images/spring.png";
 import LoginInput from "./loginInput/loginInput";
 import LoginButton from "./loginButton/LoginButton";
@@ -9,18 +8,19 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const dispatch = useDispatch();
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    console.log(e);
     e.preventDefault();
 
-    if (username == "admin" && password == 1234) {
-      dispatch(loginAction({ username, password }));
-      navigate("//");
+    if (username === "admin" && password === "1234") {
+      localStorage.setItem("user", username);
+      dispatch(loginAction(username));
+
+      navigate("/");
     } else {
       alert("Invalid credentials");
     }
@@ -45,17 +45,13 @@ export default function Login() {
               type="text"
               value={username}
               placeholder="Enter your username"
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <LoginInput
               type="password"
               value={password}
               placeholder="Enter your password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="login__card__info__buttons">
