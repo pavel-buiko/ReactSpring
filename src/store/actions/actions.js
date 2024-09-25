@@ -1,19 +1,21 @@
+import { login, logout, searchTerm as searchType } from "./types";
+
 export function setSearchTerm(searchTerm) {
   return {
-    type: "SET_SEARCH_TERM",
+    type: searchType,
     value: searchTerm,
   };
 }
 
 export function loginAction(user) {
   return {
-    type: "LOGIN",
+    type: login,
     value: user,
   };
 }
 
 export function logoutAction() {
   return {
-    type: "LOGOUT",
+    type: logout,
   };
 }

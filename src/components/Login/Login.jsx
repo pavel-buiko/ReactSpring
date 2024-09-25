@@ -3,7 +3,7 @@ import LoginInput from "./loginInput/loginInput";
 import LoginButton from "./loginButton/LoginButton";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginAction } from "../../store/actions";
+import { loginAction } from "../../store/actions/actions";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
