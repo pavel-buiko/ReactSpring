@@ -313,7 +313,7 @@ a:visited {
   box-shadow: 1px 1px 15px rgb(215, 215, 215);
   border-radius: 10px;
   padding: 1rem;
-  width: 25%;
+  width: 300px;
 }
 .login__card__header {
   padding: 0.2rem 0 2rem 0;
@@ -364,9 +364,6 @@ a:visited {
   background-color: #121212;
   color: #fff;
   transition: background-color 0.3s ease;
-}
-.login__card__info__buttons .login__card__info__buttons__button:hover {
-  background-color: black;
 }
 .login__card__info__buttons .login__card__info__buttons__button:last-child {
   background-color: #fff;

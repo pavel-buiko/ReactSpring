@@ -325,7 +325,7 @@ a {
     box-shadow: 1px 1px 15px rgb(215, 215, 215);
     border-radius: 10px;
     padding: 1rem;
-    width: 25%;
+    width: 300px;
     &__header {
       padding: 0.2rem 0 2rem 0;
       &__sentence {
@@ -375,10 +375,6 @@ a {
           background-color: $primary-color;
           color: #fff;
           transition: background-color 0.3s ease;
-
-          &:hover {
-            background-color: darken($primary-color, 10%);
-          }
 
           &:last-child {
             background-color: #fff;

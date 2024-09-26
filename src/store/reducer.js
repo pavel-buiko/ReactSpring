@@ -15,17 +15,25 @@ export const reducer = (state = defaultState, action) => {
   }
 };
 
-const userState = {
-  isAuthenticated: false,
+const initialState = {
+  isAuth: false,
   user: null,
 };
 
-export const userReducer = (state = userState, action) => {
+export const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case "LOGIN":
-      console.log("Congrats");
-      return { ...state, isAuthenticated: true, user: action.value };
-
+      return {
+        ...state,
+        isAuth: true,
+        user: action.payload,
+      };
+    case "LOGOUT":
+      return {
+        ...state,
+        isAuth: false,
+        user: null,
+      };
     default:
       return state;
   }
