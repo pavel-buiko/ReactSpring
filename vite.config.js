@@ -8,4 +8,11 @@ export default defineConfig({
   build: {
     outDir: "dist", // По умолчанию директория сборки
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:5000",
+      },
+    },
+  },
 });

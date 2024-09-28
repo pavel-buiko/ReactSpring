@@ -16,6 +16,15 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    fetch("/api/test")
+      .then((value) => value.json())
+      .then((data) => console.log(data.message))
+      .catch((message) => {
+        throw new Error(message);
+      });
+  }, []);
+
+  useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       dispatch(loginAction(storedUser));
