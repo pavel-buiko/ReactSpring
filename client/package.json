@@ -2,6 +2,7 @@
   "name": "reactspringcopy",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "proxy": "http://localhost:5000",
   "scripts": {
     "dev": "vite",
@@ -31,6 +32,7 @@
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
     "sass": "^1.79.2",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }

@@ -1,4 +1,4 @@
-import projectItems from "../../public/assets/dataArrays/projectItems";
+import projectItems from "../../../server/projectItems";
 
 const defaultState = {
   searchTerm: "",

@@ -2,27 +2,36 @@ import logo from "../../../public/assets/images/spring.png";
 import LoginInput from "./loginInput/loginInput";
 import LoginButton from "./loginButton/LoginButton";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loginAction } from "../../store/actions/actions";
-import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
 
-    if (username === "admin" && password === "1234") {
-      localStorage.setItem("user", username);
-      dispatch(loginAction(username));
-
-      navigate("/");
-    } else {
-      alert("Invalid credentials");
+      const data = await response.json();
+      if (response.ok) {
+        dispatch(loginAction(data));
+        localStorage.setItem("user", JSON.stringify(data));
+        console.log(data);
+        navigate("/");
+      } else {
+        alert("Something went wrong" + data.message);
+      }
+    } catch (error) {
+      alert(`Login error: \n ${error}`);
     }
   };
 
