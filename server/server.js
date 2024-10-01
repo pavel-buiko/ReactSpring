@@ -24,7 +24,6 @@ app.post("/api/login", (req, res) => {
 });
 
 app.get("/api/cards", (req, res) => {
-  console.log("I'm here");
   const searchTerm = req.query.search.toLocaleLowerCase();
   const filteredProjects = projectItems.filter((item) => {
     return item.title

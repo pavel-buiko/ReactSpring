@@ -2,14 +2,6 @@ import { useSelector } from "react-redux";
 
 export default function Cards() {
   const { filteredObjects } = useSelector((state) => state.search);
-  // const { projectItems } = useSelector((state) => state.search);
-
-  // const filteredCards = projectItems.filter((item) => {
-  //   return item.title
-  //     .concat(item.description)
-  //     .toLocaleLowerCase()
-  //     .includes(searchTerm.toLocaleLowerCase());
-  // });
 
   return (
     <div className="main__cards__container">
