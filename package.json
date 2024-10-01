@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "glob": "^11.0.0",
+    "inflight": "^1.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^9.11.1",
+    "prettier": "^3.3.3",
+    "stylelint": "^16.9.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}

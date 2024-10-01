@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchTerm } from "../../store/actions/actions";
+import { fetchSearchItems } from "../../store/actions/actions";
 import { useEffect, useState } from "react";
 
 export default function ProjectSearch() {
@@ -11,7 +11,7 @@ export default function ProjectSearch() {
 
   useEffect(() => {
     const timeId = setTimeout(() => {
-      dispatch(setSearchTerm(tempInput));
+      dispatch(fetchSearchItems(tempInput));
     }, 500);
     return () => clearTimeout(timeId);
   }, [tempInput, dispatch]);

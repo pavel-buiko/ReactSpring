@@ -25,6 +25,10 @@ function App() {
   }, []);
 
   useEffect(() => {
+    fetch("/api/cards").then((value) => console.log(value));
+  }, []);
+
+  useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       dispatch(loginAction(storedUser));

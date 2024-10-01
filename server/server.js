@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import projectItems from "./projectItems.js";
 
 dotenv.config();
 const port = process.env.PORT || 5000;
@@ -22,14 +23,17 @@ app.post("/api/login", (req, res) => {
   }
 });
 
-// app.get("/api/cards", (req, res) => {
-//   const searchTerm = req.body;
-//   const filteredCards = projectItems.filter((val) => {
-//     val.description.concat(val.title).toLocaleLowerCase() ===
-//       searchTerm.toLocaleLowerCase();
-//   });
+app.get("/api/cards", (req, res) => {
+  console.log("I'm here");
+  const searchTerm = req.query.search.toLocaleLowerCase();
+  const filteredProjects = projectItems.filter((item) => {
+    return item.title
+      .concat(item.description)
+      .toLocaleLowerCase()
+      .includes(searchTerm);
+  });
 
-//   res.json(filteredCards);
-// });
+  res.json(filteredProjects);
+});
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));

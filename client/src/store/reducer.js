@@ -2,14 +2,16 @@ import projectItems from "../../../server/projectItems";
 
 const defaultState = {
   searchTerm: "",
-  projectItems: projectItems,
+  filteredObjects: projectItems,
 };
 
 export const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "set_search_term":
       return { ...state, searchTerm: action.value };
-
+    case "set_filtered_objects": {
+      return { ...state, filteredObjects: action.value };
+    }
     default:
       return state;
   }

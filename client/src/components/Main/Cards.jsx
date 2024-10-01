@@ -1,19 +1,19 @@
 import { useSelector } from "react-redux";
 
 export default function Cards() {
-  const { searchTerm } = useSelector((state) => state.search);
-  const { projectItems } = useSelector((state) => state.search);
+  const { filteredObjects } = useSelector((state) => state.search);
+  // const { projectItems } = useSelector((state) => state.search);
 
-  const filteredCards = projectItems.filter((item) => {
-    return item.title
-      .concat(item.description)
-      .toLocaleLowerCase()
-      .includes(searchTerm.toLocaleLowerCase());
-  });
+  // const filteredCards = projectItems.filter((item) => {
+  //   return item.title
+  //     .concat(item.description)
+  //     .toLocaleLowerCase()
+  //     .includes(searchTerm.toLocaleLowerCase());
+  // });
 
   return (
     <div className="main__cards__container">
-      {filteredCards.map((arrayItem) => {
+      {filteredObjects.map((arrayItem) => {
         return (
           <article key={arrayItem.title} className="main__cards__article">
             <a className="main__cards__article__item" href="#">
