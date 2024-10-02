@@ -5,7 +5,6 @@ import Login from "./components/Login/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { logoutAction } from "./store/actions/actions";
-import { loginAction } from "./store/actions/actions";
 import { loginThunk } from "./store/actions/actions";
 
 const PrivateRoute = ({ children }) => {
@@ -23,10 +22,6 @@ function App() {
       .catch((message) => {
         throw new Error(message);
       });
-  }, []);
-
-  useEffect(() => {
-    fetch("/api/cards").then((value) => console.log(value));
   }, []);
 
   useEffect(() => {
