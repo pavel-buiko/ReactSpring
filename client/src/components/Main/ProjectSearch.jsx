@@ -34,5 +34,3 @@ export default function ProjectSearch() {
     </div>
   );
 }
-
-ProjectSearch.propTypes = { setSearchTerm: PropTypes.func.isRequired };

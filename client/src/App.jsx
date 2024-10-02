@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { logoutAction } from "./store/actions/actions";
 import { loginAction } from "./store/actions/actions";
+import { loginThunk } from "./store/actions/actions";
 
 const PrivateRoute = ({ children }) => {
   const { isAuth } = useSelector((state) => state.user);
@@ -31,7 +32,7 @@ function App() {
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      dispatch(loginAction(storedUser));
+      dispatch(loginThunk(storedUser));
     } else {
       dispatch(logoutAction());
     }

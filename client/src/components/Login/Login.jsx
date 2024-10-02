@@ -4,7 +4,7 @@ import LoginButton from "./loginButton/LoginButton";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { loginAction } from "../../store/actions/actions";
+import { loginThunk } from "../../store/actions/actions";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -14,24 +14,12 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+    const result = await dispatch(loginThunk(username, password));
 
-      const data = await response.json();
-      if (response.ok) {
-        dispatch(loginAction(data));
-        localStorage.setItem("user", JSON.stringify(data));
-        console.log(data);
-        navigate("/");
-      } else {
-        alert("Something went wrong" + data.message);
-      }
-    } catch (error) {
-      alert(`Login error: \n ${error}`);
+    if (result.success) {
+      navigate("/");
+    } else {
+      alert("Login error: " + result.message);
     }
   };
 
